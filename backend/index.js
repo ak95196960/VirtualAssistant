@@ -10,10 +10,11 @@ import geminiResponse from "./gemini.js"
 
 
 const app=express()
+const allowedOrigins=['https://virtualassistant-3ml2.onrender.com'];
 app.use(cors({
-    origin:"https://virtualassistant-3ml2.onrender.com",
+    origin:allowedOrigins,
     credentials:true
-}))
+}));
 const port=process.env.PORT || 5000
 app.use(express.json())
 app.use(cookieParser())
